@@ -1,13 +1,23 @@
 {
     "for": {
         "prefix": "for",
-        "body": "for($1;$2;$3)",
+        "body": "for($1; $2; $3)",
         "description": "Loop for"
     },
-    "facts": {
-        "prefix": "fact",
-        "body": "FactsQuerySum(\"$1\"$2)",
+    "factsquery": {
+        "prefix": "factsquery",
+        "body": "FactsQuerySum(\"$1\")",
         "description": "Check for facts"
+    },
+    "factsadd": {
+        "prefix": "factsadd",
+        "body": "FactsAdd(\"$1\", $2, $3)",
+        "description": "Add facts"
+    },
+    "factsremove": {
+        "prefix": "factsremove",
+        "body": "FactsRemove(\"$1\")",
+        "description": "Remove facts"
     },
     "gameParams": {
         "prefix": "gparams",

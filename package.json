@@ -184,14 +184,14 @@
     },
     "description": "Witcher Script for Visual Studio Code",
     "devDependencies": {
-        "@types/node": "^13.7.1",
         "@types/fs-extra": "^8.1.0",
+        "@types/node": "^13.7.1",
         "@types/node-notifier": "^5.4.0",
         "@types/ws": "^7.2.1",
         "gulp": "^4.0.2",
         "gulp-sass": "^4.0.2",
         "tslint": "^5.18.0",
-        "typescript": "^3.5.3",
+        "typescript": "^3.9.10",
         "vscode": "^1.1.36"
     },
     "displayName": "vscode-witcherscript",
