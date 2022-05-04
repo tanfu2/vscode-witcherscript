@@ -29,7 +29,7 @@
 		},
 		{
 			"name": "keyword.other.ws",
-			"match": "\\b(out|inlined|autobind|editable|entry|exec|hint|import|latent|optional|out|quest|saved|statemachine|timer)\\b"
+			"match": "\\b(out|inlined|autobind|editable|entry|exec|hint|import|latent|optional|out|quest|saved|statemachine|timer|storyscene)\\b"
 		},
 		{
 			"name": "keyword.operator.new.ws",
@@ -53,7 +53,7 @@
 		},
 		{
 			"name": "support.class.ws",
-			"match": "\\b(theGame|theInput|thePlayer|theSound)\\b"
+			"match": "\\b(theGame|theInput|thePlayer|theSound|theServer|theCamera|theUI|theDebug|theTimer)\\b"
 		},
 		{
 			"match": "\\b(this|parent|super)\\b",
@@ -110,7 +110,7 @@
 					"name": "storage.type.ws"
 				}
 			},
-			"end": ":\\s*(array\\s*<\\s*\\w+\\s*>|\\w*)\\s*;",
+			"end": ":\\s*(array\\s*<\\s*\\w+\\s*>|\\w*)\\s*(=\\s*.*)*\\s*;",
 			"endCaptures": {
 				"1": {
 					"patterns": [
@@ -118,6 +118,9 @@
 							"include": "#ws-var-types"
 						}
 					]
+				},
+				"2": {
+					"name": "support.variable.ws"
 				}
 			},
 			"patterns": [
@@ -228,7 +231,7 @@
 			"patterns": [
 				{
 					"name": "storage.type.ws",
-					"match": "\\b(string|int|integer|bool|float|name|range)\\b"
+					"match": "\\b(string|int|bool|float|name)\\b"
 				}
 			]
 		}
