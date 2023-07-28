@@ -39,9 +39,9 @@ export class CompareScriptCommand implements Command {
 
         vscode.commands.executeCommand(
             "vscode.diff",
-            vscode.Uri.file(this.uri.fsPath),
             vscode.Uri.file(originalScriptPath),
-            `Diff ${path.basename(this.uri.fsPath)} (Head/Original)`,
+            vscode.Uri.file(this.uri.fsPath),
+            `Diff ${path.basename(this.uri.fsPath)} (Original/Head)`,
             {}
         );
     }
