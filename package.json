@@ -189,7 +189,7 @@
         "@types/node-notifier": "^5.4.0",
         "@types/ws": "^7.2.1",
         "gulp": "^4.0.2",
-        "gulp-sass": "^4.0.2",
+        "gulp-sass": "^5.1.0",
         "tslint": "^5.18.0",
         "typescript": "^3.9.10",
         "vscode": "^1.1.36"
