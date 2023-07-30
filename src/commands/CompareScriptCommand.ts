@@ -5,16 +5,10 @@ import { Configuration } from "../components/Configuration";
 import { Commands, Strings } from "../constants";
 
 export class CompareScriptCommand implements Command {
-    constructor(private configuration: Configuration, private uri: vscode.Uri) {}
+    constructor(private configuration: Configuration, private uri: vscode.Uri) { }
 
     execute() {
         if (!vscode.workspace.workspaceFolders) {
-            return;
-        }
-
-        let workspacePath = vscode.workspace.workspaceFolders[0].uri.fsPath;
-
-        if (!fse.pathExistsSync(path.join(workspacePath, "content", "scripts"))) {
             return;
         }
 
@@ -28,10 +22,22 @@ export class CompareScriptCommand implements Command {
             return;
         }
 
-        let originalScriptPath = this.uri.fsPath.replace(
-            path.join(workspacePath, "content"),
-            path.join(gamePath, "content/content0")
-        );
+        let workspacePath = vscode.workspace.workspaceFolders[0].uri.fsPath;
+
+        let relativeScriptPath = this.uri.fsPath.replace(workspacePath, "");
+        let scriptPathParts = relativeScriptPath.split(path.sep);
+
+        if (!scriptPathParts.includes("content")) {
+            return;
+        }
+
+        while (scriptPathParts[0] !== "content") {
+            scriptPathParts.shift();
+        }
+
+        scriptPathParts.shift();
+
+        let originalScriptPath = path.join(gamePath, "content", "content0", ...scriptPathParts);
 
         if (!fse.pathExistsSync(originalScriptPath)) {
             return;
